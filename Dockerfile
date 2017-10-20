@@ -10,5 +10,5 @@ RUN set -ex && \
 
 HEALTHCHECK --interval=10s --timeout=5s --retries=10 CMD curl -x http://127.0.0.1:1921 https://www.google.com/ncr || exit 1
 
-CMD privoxy /etc/privoxy/config && ss-local -b 0.0.0.0 -u --fast-open -c /etc/shadowsocks-libev/config.json
+CMD privoxy /etc/privoxy/config && ss-local -b 0.0.0.0 -u -c /etc/shadowsocks-libev/config.json
 
